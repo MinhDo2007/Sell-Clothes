@@ -26,11 +26,11 @@ module SellClothes
     config.action_mailer.perform_deliveries = true
     config.action_mailer.delivery_method = :smtp
 
-    config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+    config.action_mailer.default_url_options = {host: "sitepoint-devise.herokuapp.com"}
     config.action_mailer.smtp_settings = {
-      :address => "ms01.framgia.com",
+      :address => 'smtp.sendgrid.net',
       :port => "587",
-      :domain => "framgia.com",
+      :domain => "heroku.com",
       :user_name => ENV["GMAIL_USER_NAME"],
       :password => ENV["GMAIL_PASSWORD"],
       :authentication => "plain",
