@@ -1,0 +1,38 @@
+<div id="devise">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      <div class="row myborder">
+        <h4 class="devise-h4">Login Now</h4><hr>
+
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            <%= link_to "" do %>
+                <i class="glyphicon glyphicon-envelope mycolor"></i>
+            <% end %>
+          </span>
+          <%= f.email_field :email, autocomplete: "off",  class: "form-control input-form", placeholder: "Email"  %>
+        </div>
+
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            <%= link_to "" do %>
+                <i class="glyphicon glyphicon-lock mycolor"></i>
+            <% end %>
+          </span>
+          <%= f.password_field :password, autocomplete: "off",  class: "form-control input-form", placeholder: "Password"  %>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Log in", class: "btn-u pull-left" %>
+          </div>
+        </div>
+        <div class="text-center">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  <% end %>
+</div>
