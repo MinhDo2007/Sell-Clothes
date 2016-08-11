@@ -3,9 +3,17 @@
     <%= link_to t("static_page.title"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <%= link_to t("static_page.title"), root_path, id: "logo" %>
+        <% if user_signed_in? && current_user.admin? %>
+          <li><%= link_to t("admin.dashboard"), "#" %></li>
+        <% end %>
         <li><%= link_to t("static_page.home"), root_path %></li>
         <li><%= link_to t("static_page.help"), help_path %></li>
-        <li><%= link_to t("static_page.log_in"), "#" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to t("static_page.log_out"), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to t("static_page.log_in"),  new_user_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

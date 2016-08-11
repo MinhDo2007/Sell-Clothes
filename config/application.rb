@@ -22,5 +22,19 @@ module SellClothes
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+    config.action_mailer.smtp_settings = {
+      :address => "ms01.framgia.com",
+      :port => "587",
+      :domain => "framgia.com",
+      :user_name => ENV["GMAIL_USER_NAME"],
+      :password => ENV["GMAIL_PASSWORD"],
+      :authentication => "plain",
+      :enable_starttls_auto => true
+    }
   end
 end
