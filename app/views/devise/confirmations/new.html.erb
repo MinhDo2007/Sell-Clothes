@@ -1,0 +1,29 @@
+<div id="devise">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      <div class="row myborder">
+        <h4 class="dev-h4">Resend confirmation instructions</h4><hr>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            <%= link_to "" do %>
+                <i class="glyphicon glyphicon-envelope mycolor"></i>
+            <% end %>
+          </span>
+          <%= f.email_field :email, autocomplete: "off",  class: "form-control input-form", placeholder: "Email"  %>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Sign-up" , class: "btn-u pull-left" %>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <%= render "devise/shared/links" %>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  <% end %>
+</div>

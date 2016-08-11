@@ -10,10 +10,14 @@ gem 'jbuilder', '~> 2.0'
 gem "dotenv-rails"
 gem "bootstrap-sass"
 gem "i18n"
+gem "pry"
+gem "devise"
+gem "bootstrap-sass"
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem "factory_girl_rails"
 end
 
 group :development do
