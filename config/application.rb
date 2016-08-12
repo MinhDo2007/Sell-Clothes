@@ -31,8 +31,8 @@ module SellClothes
       :address => 'smtp.sendgrid.net',
       :port => "587",
       :domain => "heroku.com",
-      :user_name => ENV["GMAIL_USER_NAME"],
-      :password => ENV["GMAIL_PASSWORD"],
+      :user_name => "minhdo.ifaker@gmail.com",
+      :password => "Chunhadeptrai264330",
       :authentication => "plain",
       :enable_starttls_auto => true
     }
