@@ -26,13 +26,14 @@ module SellClothes
     config.action_mailer.perform_deliveries = true
     config.action_mailer.delivery_method = :smtp
 
-    config.action_mailer.default_url_options = {host: "secret-temple-34805.herokuapp.com"}
+    # config.action_mailer.default_url_options = {host: "secret-temple-34805.herokuapp.com"}
+    config.action_mailer.default_url_options = {host: "localhost:3000"}
     config.action_mailer.smtp_settings = {
       :address => 'smtp.sendgrid.net',
       :port => "587",
       :domain => "heroku.com",
-      :user_name => "minhdo.ifaker@gmail.com",
-      :password => "Chunhadeptrai264330",
+      :user_name => ENV["GMAIL_USER_NAME"],
+      :password => ENV["GMAIL_PASSWORD"],
       :authentication => "plain",
       :enable_starttls_auto => true
     }
