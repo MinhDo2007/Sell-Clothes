@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
+
+$(function(){
+  hiddenFlash();
+})
+
+function hiddenFlash() {
+  setTimeout(function(){
+    $(".hide-flash").fadeOut("normal");
+  }, 5000);
+}
