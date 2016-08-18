@@ -1,0 +1,10 @@
+<li>
+  <div class="album-infor">
+    <div class="ab">
+      <%= link_to image_tag(album.image, size: "150x190", class: "album-image" ), admin_album_path(album.id) %>
+    </div>
+    <div class="text-center album-name"><%= album.name %></div>
+    <div class="text-center"><%= album.created_at %></div>
+    <div class="text-center"><%= Album.get_name_user(album.user_id) %></div>
+  </div>
+</li>

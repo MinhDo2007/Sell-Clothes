@@ -1,0 +1,42 @@
+#album {
+  .album-index {
+    margin: 0;
+    padding: 0;
+    background: floralwhite;
+  }
+
+  ul.list-image {
+    overflow: hidden;
+    padding: 94px;
+    clear: both;
+    list-style: none
+  }
+
+  ul.list-image li {
+    width: 190px;
+    float: left;
+    padding: 0 20px 60px 20px;
+    font-size: 11px;
+  }
+
+  .album-name {
+    font-size: 12px;
+    color: blue;
+    font-weight: bold;
+  }
+
+  .album-image {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+  }
+
+  .album-infor:hover {
+    // transform: rotateY(360deg);
+    transform: scale(1.5);
+  }
+
+  .album-infor {
+    transition: all 1s;
+  }
+}

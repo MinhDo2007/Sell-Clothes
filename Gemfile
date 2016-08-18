@@ -13,6 +13,8 @@ gem "i18n"
 gem "pry"
 gem "devise"
 gem "bootstrap-sass"
+gem "carrierwave"
+gem "mini_magick"
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
