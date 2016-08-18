@@ -4,4 +4,12 @@ Rails.application.routes.draw do
 
   get "help" => "static_pages#help"
   get "about" => "static_pages#about"
+
+  resources :albums
+  resources :photos
+
+  namespace :admin do
+    resources :albums
+    resources :photos
+  end
 end

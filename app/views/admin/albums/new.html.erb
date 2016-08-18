@@ -1,0 +1,28 @@
+<div id="devise">
+  <%= form_for [:admin, @album] do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      <div class="row myborder">
+        <h4 class="dev-h4">Create Album</h4><hr>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Album Name:
+          </span>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+         <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Image Album:
+          </span>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Create New Album" , class: "btn-u pull-left" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
