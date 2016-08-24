@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :album_id, :name, :image
+  serialize :images
   belongs_to :album
-  mount_uploader :image, ImageUploader
+  mount_uploaders :images, ImageUploader
 end

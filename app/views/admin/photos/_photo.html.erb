@@ -1,0 +1,10 @@
+<% @photos[0].images.each do |photo| %>
+  <li>
+    <div class="album-infor">
+      <div class="ab">
+        <%= link_to image_tag(photo, size: "150x190", class: "album-image" ),
+         "#" %>
+      </div>
+    </div>
+  </li>
+<% end %>

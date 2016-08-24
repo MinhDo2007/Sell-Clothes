@@ -4,13 +4,12 @@ class Admin::AlbumsController < Admin::BaseAdminController
   end
 
   def create
-    binding.pry
     @album = Album.new album_params
     if @album.valid?
       @album.save
       flash[:success] = "Create Album Successfully"
     end
-    redirect_to admin_albums_path
+    redirect_to new_admin_album_photo_path(@album.id)
   end
 
   def index

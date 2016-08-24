@@ -1,0 +1,22 @@
+<div id="devise">
+  <%= form_for [:admin, :album, @photo] do |f| %>
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      <div class="row myborder">
+        <%= f.hidden_field :album_id, :value => params[:album_id] %>
+        <h4 class="dev-h4">Add Photo</h4><hr>
+         <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Choose Photos:
+          </span>
+          <%= f.file_field :images, multiple: true, class: "form-control" %>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Add Photo" , class: "btn-u pull-left" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

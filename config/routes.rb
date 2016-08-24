@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   resources :photos
 
   namespace :admin do
-    resources :albums
-    resources :photos
+    resources :albums do
+      resources :photos do
+        resources :images, only: :create
+      end
+    end
   end
 end

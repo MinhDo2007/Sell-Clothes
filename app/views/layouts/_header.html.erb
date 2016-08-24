@@ -5,7 +5,15 @@
       <ul class="nav navbar-nav navbar-right">
         <%= link_to t("static_page.title"), root_path, id: "logo" %>
         <% if user_signed_in? && current_user.admin? %>
-          <li><%= link_to t("admin.dashboard"), "#" %></li>
+          <li>
+            <%= link_to t("admin.dashboard"), "#",
+             id: "dropdownMenu1", data: {toggle: "dropdown"},
+             aria: {haspopup: "true", expanded: "true"} %>
+             <ul class="dropdown-menu", aria-labelledby="dropdownMenu1">
+               <li><%= link_to t("dashboard-album-all"), admin_albums_path %></li>
+               <li><%= link_to t("dashboard-album-new"), new_admin_album_path %></li>
+             </ul>
+          </li>
         <% end %>
         <li><%= link_to t("static_page.home"), root_path %></li>
         <li><%= link_to t("static_page.help"), help_path %></li>
