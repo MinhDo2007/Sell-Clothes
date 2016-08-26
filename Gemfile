@@ -15,6 +15,8 @@ gem "devise"
 gem "bootstrap-sass"
 gem "carrierwave", :github => "carrierwaveuploader/carrierwave"
 gem "mini_magick"
+gem "angularjs-rails"
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do

@@ -1,0 +1,7 @@
+<div ng-app = "app-slide-image" ng-controller = "controller-slide-image">
+  <div ng-init="init('<%= @images_arr %>')">
+  <div class="silder">
+    <img ng-repeat="slide in slides" class="slide" ng-hide="!isCurrentSlideIndex($index)"
+     ng-src="{{slide}}">
+  </div>
+</div>
