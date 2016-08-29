@@ -1,0 +1,26 @@
+#slide-image{
+  .section-divider {
+    height: 1px;
+    background: #EEE;
+    position: relative;
+    overflow: visible;
+    z-index: 100;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  .section-divider:after {
+    z-index: 10000;
+    content: "\002665";
+    font-family: FontAwesome;
+    color: #54397E;
+    position: absolute;
+    top: -41px;
+    left: 50%;
+    right: 50%;
+    width: 184px;
+    height: 30px;
+    margin-left: -20px;
+    font-size: 60px;
+  }
+}

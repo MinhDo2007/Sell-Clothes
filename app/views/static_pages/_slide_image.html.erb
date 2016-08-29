@@ -1,0 +1,13 @@
+<div id="slide-image">
+  <div ng-controller="ImageSliderController">
+    <div ng-init="init('<%= @list_image %>')">
+      <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+        <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+          <img ng-src="{{slide}}" style="height: 500px; width: 1140px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+</div>
