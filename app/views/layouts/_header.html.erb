@@ -15,8 +15,8 @@
              </ul>
           </li>
         <% end %>
-        <li><%= link_to t("static_page.home"), root_path %></li>
-        <li><%= link_to t("static_page.help"), help_path %></li>
+        <li><%= link_to t("static_page.home"), root_path, data: { no_turbolink: true } %></li>
+        <li><%= link_to t("static_page.help"), help_path, data: { no_turbolink: true } %></li>
         <% if user_signed_in? %>
           <li><%= link_to t("static_page.log_out"), destroy_user_session_path, method: :delete %></li>
         <% else %>

@@ -1,9 +1,9 @@
 class StaticPage < ActiveRecord::Base
   def self.slide_image_url images
-    result = []
+    result = ""
     images[0].images.each do |image|
-      result << image.url
+      result += (image.url + ",")
     end
-    result
+    result.gsub(/\,$/, '')
   end
 end

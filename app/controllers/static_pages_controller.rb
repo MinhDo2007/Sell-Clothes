@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     images = Album.last.photos
-    @images_arr = StaticPage.slide_image_url images
+    @list_image = StaticPage.slide_image_url images
+    respond_to :html, :json
   end
 
   def help
