@@ -1,17 +1,23 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<div class="navbar-fixed-top container logo-blog">
+  <%= link_to "Do Tuan Minh BLOG", "#", class: "logo_blog" %>
+  <img src="smiley.gif">
+</div>
+<header class="navbar navbar-inverse">
   <div class="container">
     <%= link_to t("static_page.title"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <%= link_to t("static_page.title"), root_path, id: "logo" %>
         <% if user_signed_in? && current_user.admin? %>
-          <li>
-            <%= link_to t("admin.dashboard"), "#",
-             id: "dropdownMenu1", data: {toggle: "dropdown"},
-             aria: {haspopup: "true", expanded: "true"} %>
+          <li class="dropdown">
+            <%= link_to "#",
+             id: "dropdownMenu1", data: {toggle: "dropdown"}, class: "dropdown-toggle",
+             aria: {haspopup: "true", expanded: "true"} do %>
+             <% t("admin.dashboard") %>
+             <b class="caret"></b>
+             <% end %>
              <ul class="dropdown-menu", aria-labelledby="dropdownMenu1">
                <li><%= link_to t("dashboard-album-all"), admin_albums_path %></li>
-               <li><%= link_to t("dashboard-album-new"), new_admin_album_path %></li>
              </ul>
           </li>
         <% end %>

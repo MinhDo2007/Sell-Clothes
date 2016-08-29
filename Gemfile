@@ -16,8 +16,7 @@ gem "carrierwave", :github => "carrierwaveuploader/carrierwave"
 gem "mini_magick"
 gem "angularjs-rails"
 gem "angular-ui-bootstrap-rails"
-gem "turbolinks"
-gem "angular-turbolinks"
+gem "angularjs-rails-resource"
 
 gem "sdoc", "~> 0.4.0", group: :doc
 

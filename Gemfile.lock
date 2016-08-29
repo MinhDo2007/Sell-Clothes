@@ -45,11 +45,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    angular-turbolinks (0.1.0)
-      coffee-rails
-      turbolinks
     angular-ui-bootstrap-rails (1.3.2)
     angularjs-rails (1.5.6)
+    angularjs-rails-resource (2.2.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.7)
       execjs
@@ -184,9 +182,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.0)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -203,9 +198,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  angular-turbolinks
   angular-ui-bootstrap-rails
   angularjs-rails
+  angularjs-rails-resource
   bootstrap-sass
   byebug
   carrierwave!
@@ -226,7 +221,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   sqlite3
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 

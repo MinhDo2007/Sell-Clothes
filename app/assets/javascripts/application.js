@@ -17,10 +17,12 @@
 //= require angular-resource
 //= require angular-ui-bootstrap
 //= require angular-ui-bootstrap-tpls
+//= require angularjs/rails/resource
 //= require angular-route
-//= require angular-turbolinks
 //= require_tree .
 //= require bootstrap
+
+
 
 $(function(){
   hiddenFlash();

@@ -10,10 +10,20 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+.logo-blog a{
+  font-size: 30px;
+  color: #54397E;
+}
+
 /* universal */
 
 .navbar-inverse {
   background-color: #54397E;
+}
+
+.navbar {
+  border-radius: 0;
+  border: 1px; solid: #54397E;
 }
 
 body {
