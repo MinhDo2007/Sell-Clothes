@@ -18,6 +18,10 @@ gem "angularjs-rails"
 gem "angular-ui-bootstrap-rails"
 gem "turbolinks"
 gem "angular-turbolinks"
+gem "font-awesome-rails"
+gem "mini_magick"
+gem "rmagick"
+gem "fog"
 
 gem "sdoc", "~> 0.4.0", group: :doc
 

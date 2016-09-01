@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20160820061338) do
   create_table "photos", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "album_id",   limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "images",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "images",     limit: 65535
   end
 
   add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree

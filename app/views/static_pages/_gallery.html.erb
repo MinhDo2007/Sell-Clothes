@@ -1,0 +1,14 @@
+<div id="gallery">
+  <div class="title">
+    <%= t("gallery.title") %>
+  </div>
+  <hr>
+  <% if @images.present? %>
+    <% @images[0].images.each_with_index do |image, index| %>
+      <div class="img">
+        <%= link_to image_tag(image.medium,  data: {toggle: "modal", target: "#myModal-#{index}"}), "javascript:void(0)" if image.present? %>
+        <%= render "modal_image", img_src: image, index: index %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
