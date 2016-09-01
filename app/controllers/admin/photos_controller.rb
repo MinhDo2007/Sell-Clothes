@@ -12,7 +12,6 @@ class Admin::PhotosController < Admin::BaseAdminController
 
 	def create
 		unless check_album_present?
-			binding.pry
 			@photo = Photo.new photo_params
 			if @photo.valid?
 				@photo.save
