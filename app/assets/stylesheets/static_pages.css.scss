@@ -1,26 +1,14 @@
-#slide-image{
-  .section-divider {
-    height: 1px;
-    background: #EEE;
-    position: relative;
-    overflow: visible;
-    z-index: 100;
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
+#map {
+  width: 1000px;
+  height: 500px;
 
-  .section-divider:after {
-    z-index: 10000;
-    content: "\002665";
-    font-family: FontAwesome;
-    color: #54397E;
-    position: absolute;
-    top: -41px;
-    left: 50%;
-    right: 50%;
-    width: 184px;
-    height: 30px;
-    margin-left: -20px;
-    font-size: 60px;
-  }
+}
+
+.image-map{
+  display: none;
+}
+
+.image_modal {
+  top: calc(20%) !important;
+  left: calc(28%) !important;
 }

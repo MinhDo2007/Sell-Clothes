@@ -1,9 +1,5 @@
 #gallery {
-  .title {
-    font-size: 50px;
-    color: #54397E;
-    font-weight: 100;
-  }
+  overflow: auto;
 
   div.img {
     margin: 1px;

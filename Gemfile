@@ -21,7 +21,10 @@ gem "angular-turbolinks"
 gem "font-awesome-rails"
 gem "mini_magick"
 gem "rmagick"
+gem 'google-api-client', '~> 0.9'
+gem "gmaps4rails"
 gem "fog"
+gem 'geocoder'
 
 gem "sdoc", "~> 0.4.0", group: :doc
 
