@@ -313,3 +313,50 @@ input {
 #container_body {
   margin-top: 30px;
 }
+
+.section-divider {
+  height: 1px;
+  background: #EEE;
+  position: relative;
+  overflow: visible;
+  z-index: 100;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.section-divider:after {
+  z-index: 10000;
+  content: "\002665";
+  font-family: FontAwesome;
+  color: #54397E;
+  position: absolute;
+  top: -41px;
+  left: 50%;
+  right: 50%;
+  width: 184px;
+  height: 30px;
+  margin-left: -20px;
+  font-size: 60px;
+}
+
+.title {
+  font-size: 50px;
+  color: #54397E;
+  font-weight: 100;
+}
+
+.image-body {
+  height: 500px;
+  width: 100%;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: normal;
+  color: #6B6B6B;
+}
+
+.icon-table {
+  width: 40px;
+  height: 40px;
+}

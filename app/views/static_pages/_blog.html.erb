@@ -1,0 +1,32 @@
+<div id="blog">
+  <hr class="section-divider">
+  <div class="title">
+    <%= t("blog.title") %>
+  </div>
+  <hr>
+  <%= link_to image_tag(@blog.image.url, class: "image-body") %>
+  <br><br><br><br>
+  <div class="title">
+    <%= @blog.title %>
+  </div>
+  <div>
+    <span class="calender-format">
+      <%= link_to "javascript:void(0)" do %>
+        <i class="fa fa-calendar">
+          <%= l @blog.created_at, format: :short %>
+        </i>
+      <% end %>
+    </span>
+    <span>
+      <%= link_to "javascript:void(0)" do %>
+        <i class="fa fa-user">
+          <%= (User.find (@blog.user_id)).name %>
+        </i>
+      <% end %>
+    </span>
+  </div>
+  <br><br>
+  <div class="content">
+    <%= @blog.content %>
+  </div>
+</div>

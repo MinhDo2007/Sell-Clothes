@@ -19,8 +19,10 @@
 //= require angular-ui-bootstrap-tpls
 //= require angular-route
 //= require angular-turbolinks
-//= require_tree .
 //= require bootstrap
+//= require underscore
+//= require gmaps/google
+//= require_tree .
 
 $(function(){
   hiddenFlash();

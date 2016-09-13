@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
     if user_signed_in? && Album.all.present?
       @images = Album.last.photos
       @list_image = StaticPage.slide_image_url @images
+      @blog = Blog.last
       respond_to :html, :json
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820061338) do
+ActiveRecord::Schema.define(version: 20160909111249) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -23,8 +23,29 @@ ActiveRecord::Schema.define(version: 20160820061338) do
 
   add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
 
+  create_table "blogs", force: :cascade do |t|
+    t.text     "image",      limit: 65535
+    t.string   "title",      limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
+
   create_table "catelogs", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
+    t.string   "name",       limit: 255
+    t.string   "address",    limit: 255
+    t.string   "title",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -91,6 +112,7 @@ ActiveRecord::Schema.define(version: 20160820061338) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "albums", "users"
+  add_foreign_key "blogs", "users"
   add_foreign_key "photos", "albums"
   add_foreign_key "products", "catelogs"
   add_foreign_key "transactions", "users"

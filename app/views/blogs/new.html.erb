@@ -1,0 +1,35 @@
+<div id="blog" class="container">
+  <div id="devise">
+    <%= form_for @blog do |f| %>
+      <div class="row myborder">
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <h4 class="dev-h4">Add Photo</h4><hr>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Choose Photos:
+          </span>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Title:
+          </span>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="margin-bottom-20">
+          <div class="input-group-addon  blog-content">
+            Content:
+          </div>
+        </div>
+        <div>
+          <%= f.text_area(:content,rows: 10) %>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Add Photo" , class: "btn-u pull-left" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

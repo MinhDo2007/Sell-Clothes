@@ -29,7 +29,13 @@ en:
     about_us: "About us"
     title: "Clothes"
     sign_up: "Sign up now"
-    # intro_about: "The Ruby on Rails Tutorial is a project to make a book and screencasts to teach web development with Ruby on Rails"
     intro_home: "Welcome to the Shop"
-    # intro_help: "Get help on the Ruby on Rails Tutorial at the Rails Tutorial help page."
     home_description: "This is the home page for the website shop clothes"
+  date:
+    formats:
+      short: "%Y-%m-%d"
+  footer:
+    street: "Hoa Xa, Ung Hoa, "
+    city: "Ha Noi City"
+    phone: "+841642264330"
+    email: "minhdo.ifaker@gmail.com"
