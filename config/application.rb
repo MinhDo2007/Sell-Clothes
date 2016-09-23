@@ -37,5 +37,6 @@ module SellClothes
       :authentication => "plain",
       :enable_starttls_auto => true
     }
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end

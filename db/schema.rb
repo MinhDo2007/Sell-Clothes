@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909111249) do
+ActiveRecord::Schema.define(version: 20160922090429) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -69,8 +69,9 @@ ActiveRecord::Schema.define(version: 20160909111249) do
     t.integer  "count_buy",  limit: 4
     t.integer  "view",       limit: 4
     t.integer  "catelog_id", limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "detail",     limit: 65535
   end
 
   add_index "products", ["catelog_id"], name: "index_products_on_catelog_id", using: :btree

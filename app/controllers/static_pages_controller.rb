@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
       @images = Album.last.photos
       @list_image = StaticPage.slide_image_url @images
       @blog = Blog.last
+      @products = Product.all
       respond_to :html, :json
     end
   end

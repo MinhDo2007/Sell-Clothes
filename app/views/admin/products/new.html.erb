@@ -1,0 +1,61 @@
+<div id="devise">
+  <%= form_for [:admin, @product] do |f| %>
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      <div class="row myborder">
+        <h4 class="dev-h4">Create Product</h4><hr>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Product Name:
+          </span>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Product Price:
+          </span>
+          <%= f.text_field :price, class: "form-control" %>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Product Discount:
+          </span>
+          <%= f.text_field :discount, class: "form-control" %>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Product Image:
+          </span>
+          <%= f.file_field :img, accept: "image/jpeg, image/jpg, image/gif, image/png", class: "form-control" %>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Product List Image:
+          </span>
+          <%= f.file_field :img_list, accept: "image/jpeg, image/jpg, image/gif, image/png", multiple: true, class: "form-control" %>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon">
+            Catelogs:
+          </span>
+          <span>
+            <%= f.select :catelog_id, options_from_collection_for_select(@catelogs, "id", "name"), {include_blank: ""}, { class: "form-control"} %>
+          </span>
+        </div>
+        <div class="margin-bottom-20">
+          <div class="input-group-addon  blog-content">
+            Detail Product:
+          </div>
+        </div>
+        <div>
+          <%= f.text_area(:detail,rows: 10) %>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Create New Album" , class: "btn-u pull-left" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
