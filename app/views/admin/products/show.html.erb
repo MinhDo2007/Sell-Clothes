@@ -1,0 +1,49 @@
+<div ng-controller="ctrShowProduct">
+  <br><br><br>
+  <div class="infor-product row">
+    <div class="product-image col-sm-8">
+      <h1 class="product-name"><%= link_to @product.name %></h1>
+      <img ng-src= "{{img}}" ng-init= "init('<%= @product.img_list[0] %>')" class="img-hover" id="zoom-img">
+      <div class="img-all-child">
+        <ul>
+          <% @product.img_list.each do |photo| %>
+            <li ng-mouseover="imageHover('<%= photo.url %>')">
+              <%= link_to image_tag(photo, size: "62x80", class: "img-child") %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="detail-more">
+        <div class="title"><%= t"product.more_procuct_detail" %></div>
+        <ul>
+          <% @detail.each do |sentences| %>
+            <li><%= sentences[0] %></li>
+            <% if sentences[1].present? %>
+              <ul>
+                <% (1..sentences.count - 1).each do |index|%>
+                  <li><%= sentences[index] %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="detail-product col-sm-4">
+      <h1 class="detail"><b><%= t "product.detail_product" %></b></h1>
+      <div class="price">
+        <h1><span class="label label-default"><%= @product.discount %></span></h1>
+        <div class="product-price"><b><%= number_to_currency(@product.price) %></b></div>
+        <div class="infor-detail">
+          <h2><%= t "color" %></h2>
+          <%= select_tag "color", options_for_select(Product::COLORS), class:"btn btn-default" %>
+          <h2><%= t "size" %></h2>
+          <%= select_tag "size", options_for_select(Product::SIZES), class:"btn btn-default" %>
+          <%= button_tag t("product.add_to_bag"), class: "add-to-bag form-control" %>
+        </div>
+        <h2>"More product detail"</h2>
+      </div>
+      <h1><%= link_to image_tag(@product.img, size: "80x80") %></h1>
+    </div>
+  </div>
+</div>

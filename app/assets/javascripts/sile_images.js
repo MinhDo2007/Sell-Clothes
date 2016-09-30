@@ -24,3 +24,14 @@ $(document).keydown(function(event){
     $(".image_modal").modal('hide');
   }
 });
+
+myApp.controller("ctrShowProduct", function ($scope, $http){
+  $scope.init = function(img){
+    $scope.img = img;
+  }
+  $scope.imageHover = function(image_hover){
+    $scope.img = image_hover;
+    var ez = $("#zoom-img").data('elevateZoom');
+    ez.swaptheimage($scope.img, image_hover);
+  }
+});

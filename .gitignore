@@ -25,3 +25,4 @@ config/environments/*.local.yml
 public/uploads
 tmp
 logs
+/vendor/assets/components

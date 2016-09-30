@@ -1,0 +1,23 @@
+{
+  "name": "Sell-Clothes",
+  "homepage": "https://github.com/MinhDo2007/Sell-Clothes",
+  "authors": [
+    "MinhDo2007 <minhdt.cntt@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-slick": "^0.2.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}
