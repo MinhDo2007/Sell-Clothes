@@ -6,8 +6,20 @@
     <%= link_to t("static_page.sign_up"), new_user_registration_path, class: "btn btn-primary" %>
   </div>
 <% else %>
-  <%= render "slide_image" %>
-  <%= render "gallery" %>
-  <%= render "blog" %>
-  <%= render "shop" %>
+  <div class="loader">
+    <div id="papepilling">
+      <div class="section lazy" id="section1">
+        <%= render "slide_image" %>
+      </div>
+      <div class="section lazy" id="section2">
+        <%= render "gallery" %>
+      </div>
+      <div class="section lazy" id="section3">
+        <%= render "blog" %>
+      </div>
+      <div class="section lazy" id="section4">
+        <%= render "shop" %>
+      </div>
+    </div>
+  </div>
 <% end %>

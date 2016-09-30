@@ -7,7 +7,23 @@
     <hr>
     <ul class="list-product">
       <% @products.each_with_index do |product, index| %>
-        <li><%= link_to image_tag(product.img.medium, data: {toggle: "modal", target: "#myModal-#{index}"}, class: "product-img img-thumbnail"),  "javascript:void(0)", class: "product-img" if product.img.present? %></li>
+        <li>
+          <%= link_to image_tag(product.img.medium, data: {toggle: "modal", target: "#myModal-#{index}"},
+           class: "product-img img-thumbnail"),  "javascript:void(0)", class: "product-img" if product.img.present? %>
+          <% if product.discount.present? %>
+            <span class="badge badge-sale"><h4>99%</h4></span>
+          <% end %>
+          <h5>
+            <%= product.name %>
+            <%= link_to "#", class: "heart-like" do %>
+              <i class="glyphicon glyphicon-heart"></i>
+            <% end %>
+          </h5>
+          <h5>
+            <b><%= product.price %></b>
+            <b class="heart-like"><%= t "product.quick_view" %></b>
+          </h5>
+        </li>
       <% end %>
     </ul>
   </div>
