@@ -1,3 +1,5 @@
 en:
   blog:
     title: "BLOG"
+  blogs:
+    hello: "Hello %{name}"
