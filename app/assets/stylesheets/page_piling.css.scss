@@ -1,0 +1,82 @@
+// .animated-piling {
+//   position: relative;
+//   animation: hide_animation 5s ease-out forwards;
+//   animation-iteration-count: 1;
+//   -webkit-animation: hide_animation 5s ease-out forwards;
+//   -webkit-animation-iteration-count: 1;
+//   -moz-animation: hide_animation 5s ease-out forwards;
+//   -moz-animation-iteration-count: 1;
+//   -o-animation: hide_animation 5s ease-out forwards;
+//   -o-animation-iteration-count: 1;
+// }
+
+@keyframes hide_animation {
+  from { bottom: 0px; }
+  to { bottom: 1840px; }
+}
+
+@-moz-keyframes hide_animation {
+  from {bottom: 0px;}
+  to {bottom: 200px;}
+}
+
+@-webkit-keyframes hide_animation {
+  from {bottom: 0px;}
+  to {bottom: 1840px;}
+}
+
+@-o-keyframes hide_animation {
+  from {bottom: 0px;}
+  to {bottom: 200px;}
+}
+
+// .positon-page{
+//   position: absolute;
+//   overflow: hidden;
+// }
+// .image-positon {
+//   position: absolute;
+//   width: 1140px;
+// }
+
+.section {
+  position: absolute;
+  height: 100%;
+  width: 1140px;
+}
+
+.page0 {
+  z-index: 10;
+  background-color: white;
+}
+
+.page1 {
+  z-index: 9;
+  background-color: white;
+}
+
+.page2 {
+  z-index: 8;
+  background-color: white;
+}
+
+.page {
+  transform: translate3d(0px, -100%, 0px);
+}
+
+
+.fade-top{
+  background-color: white;
+  height: 100%;
+  width: 1140px;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.fade-below{
+  background-color: white;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+#menu li.active {
+  background: #D9F;
+}

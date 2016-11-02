@@ -4,7 +4,8 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blog = Blog.last
+    @blogs = Blog.order_blogs
+    @blogs_sort = Blog.get_four_last_blogs @blogs
   end
 
   def create

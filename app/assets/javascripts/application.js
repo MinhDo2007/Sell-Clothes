@@ -22,6 +22,8 @@
 //= require bootstrap
 //= require underscore
 //= require gmaps/google
+//= require angular-rails-templates
+//= require_tree ../templates
 //= require_tree .
 
 $(function(){
