@@ -1,0 +1,27 @@
+<div class="title-blogs">
+  <%= link_to blog.title, blog_path(blog.id) %>
+</div>
+<div class="author-blogs">
+  <span>By </span><span><%= link_to  User.find(blog.user_id).name, "" %></span>
+</div>
+<span class="entry-hr"><span class="text-blogs"><i class="fa fa-file-text-o" aria-hidden="true"></i></span></span>
+<div class="time-blogs">
+  <span class="time">
+    <%= link_to "javascript:void(0)" do %>
+      <i class="fa fa-calendar">
+        <%= l blog.created_at, format: :short %>
+      </i>
+    <% end %>
+  </span>
+  <span class="comments">
+    <%= link_to "javascript:void(0)" do %>
+      <i class="fa fa-comments-o">
+        "comments"
+      </i>
+    <% end %>
+  </span>
+</div>
+<div class="image-blogs">
+  <p><%= image_tag blog.image.large %></p>
+</div>
+

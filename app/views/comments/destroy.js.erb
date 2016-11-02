@@ -1,0 +1,6 @@
+$("#row_result_<%= @comment.id %>").remove();
+$("#flash_success").prepend('<%= j render 'shared/flash' %>')
+$(".count_comment").html("<%= j render 'comments/count_comment' %>")
+hiddenFlash();
+timeout();
+<% flash.clear %>

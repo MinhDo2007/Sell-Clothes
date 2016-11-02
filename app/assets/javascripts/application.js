@@ -35,3 +35,14 @@ function hiddenFlash() {
     $(".hide-flash").fadeOut("normal");
   }, 5000);
 }
+
+function timeout(){
+  setTimeout(function () {
+    $(".high-light").removeClass("high-light");
+  }, 3000);
+}
+
+$(document).on("click", ".model-btn-delete", function(e){
+  $(".modal-backdrop").remove();
+  $("body").removeClass("modal-open");
+});

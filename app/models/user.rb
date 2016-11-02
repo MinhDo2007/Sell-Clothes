@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   enum role: [:admin, :customer]
   has_many :albums, dependent: :destroy
   has_many :blogs, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

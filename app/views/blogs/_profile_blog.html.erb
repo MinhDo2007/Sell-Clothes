@@ -1,0 +1,24 @@
+<div class="avatar">
+</div>
+<br>
+<b><%= t("blogs.hello", name: current_user.name) %></b><br>
+<div class="user-description">
+  I'm Minion and I'm a coder. Welcome to my humble blog. I love coding and blogging and taking great photos.
+</div>
+<hr>
+<div class="list-detail-infor">
+  <ul>
+  <li><%= link_to current_user.name, blogs_path, 'ng-class' => "{'current-url': url === '/blogs'}" %></li>
+  <li><%= link_to "ABOUT", about_path, 'ng-class' => "{'current-url': url === '/about'}" %></li>
+  <li><%= link_to "POST FORTMAT", about_path %>
+    <ul class="sub-menu">
+      <li><%= link_to "STANDARD", "#" %></li>
+      <li><%= link_to "LINK", "#" %></li>
+      <li><%= link_to "GALLERY", "#" %></li>
+      <li><%= link_to "QUOTE", "#" %></li>
+      <li><%= link_to "VIDEO", "#" %></li>
+    </ul>
+  </li>
+  <li><%= link_to "CONTACT", "#" %></li>
+  </ul>
+</div>
