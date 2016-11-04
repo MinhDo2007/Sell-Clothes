@@ -1,0 +1,45 @@
+<div class="img-blog">
+  <ul>
+    <% @blogs_sort.each do |blog| %>
+      <li><%= image_tag blog.image.medium %></li>
+    <% end %>
+  </ul>
+</div>
+<br><hr><br>
+<div ng-controller="tabCtr">
+  <div class="tab-infor">
+    <ul>
+      <li>
+        <%= link_to "POSTS", "javascript:void(0)", class: "btn btn-default",
+         'ng-click' => 'setTab(1)', 'ng-class' => "{'active': number === 1}" %>
+      </li>
+      <li>
+        <%= link_to "COMMENTS", "javascript:void(0)", class: "btn btn-default",
+         'ng-click' => 'setTab(2)', 'ng-class' => "{'active': number === 2}" %>
+      </li>
+      <li>
+        <%= link_to "TAGS", "javascript:void(0)", class: "btn btn-default",
+         'ng-click' => 'setTab(3)', 'ng-class' => "{'active': number === 3}" %>
+      </li>
+    </ul>
+  </div>
+  <div class="detail-infor">
+    <div ng-show="number === 1">
+      <ul>
+        <% @blogs.each do |blog| %>
+          <li>
+            <span><i class="fa fa-file-text-o"></i></span>
+            <span><%= blog.title %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div ng-show="number === 2">
+      comment1
+    </div>
+    <div ng-show="number === 3">
+      tag1
+    </div>
+  </div>
+  <br><hr><br>
+</div>

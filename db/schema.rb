@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922090429) do
+ActiveRecord::Schema.define(version: 20161102023053) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 20160922090429) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "content",    limit: 255
+    t.integer  "user_id",    limit: 4
+    t.integer  "blog_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "comments", ["blog_id"], name: "index_comments_on_blog_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
     t.float    "latitude",   limit: 24
@@ -114,6 +125,8 @@ ActiveRecord::Schema.define(version: 20160922090429) do
 
   add_foreign_key "albums", "users"
   add_foreign_key "blogs", "users"
+  add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
   add_foreign_key "photos", "albums"
   add_foreign_key "products", "catelogs"
   add_foreign_key "transactions", "users"

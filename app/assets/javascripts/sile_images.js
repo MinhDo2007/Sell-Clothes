@@ -65,3 +65,18 @@ myApp.controller("tabCtr", function($scope){
     $scope.number = number;
   }
 });
+
+
+myApp.controller("deleteModalCtr", function($scope, $http){
+  $scope.editComment = function(){
+    console.log(12345);
+  }
+  // $scope.postComment = function(){
+
+  // }
+
+  // $scope.modalDelete = function(x){
+  //   $(".modal-backdrop").remove();
+  //   $("body").removeClass("modal-open");
+  // }
+});

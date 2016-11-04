@@ -1,0 +1,5 @@
+<%= form_for([@blog, @blog.comments.build], remote: true) do |f| %>
+  <div class="cmt-lb"><b><%= "Comment" %></b></div>
+  <%= f.text_area :content, rows: 10, class: "text_area_comment" %>
+  <%= f.submit "Post Comment", class: "form-control btn-post" %>
+<% end %>

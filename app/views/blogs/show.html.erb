@@ -1,0 +1,20 @@
+<div id="blogs" ng-controller="blogsCtr">
+  <div id="flash_success"></div>
+  <div class="row">
+    <div class="infor-profile col-md-2">
+      <%= render "profile_blog" %>
+    </div>
+    <div class="infor-blogs col-md-7">
+      <%= render "infor_blog", blog: @blog %>
+      <div class="des-blogs">
+        <%= @blog.content %>
+      </div>
+      <div id="commentssss">
+        <%= render "comments/comment" %>
+      </div>
+    </div>
+    <div class="other-blogs col-md-3">
+        <%= render "other_infor_blog" %>
+    </div>
+  </div>
+</div>

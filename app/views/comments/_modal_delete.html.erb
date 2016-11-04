@@ -1,0 +1,16 @@
+<div class="modal fade" id="row_<%= comment.id %>" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        You want to delete comment
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Cancel
+        </button>
+        <%= link_to "Delete", [comment.blog, comment], method: :delete,
+          remote: true, class: "btn btn-primary model-btn-delete" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<% @comments.each do |comment| %>
+  <div id="row_result_<%= comment.id %>">
+    <div class="row">
+      <div class="col-md-2">
+          <div class="infor-profile">
+            <div class="avatar avatar-comment">
+            </div>
+          </div>
+      </div>
+      <div class="col-md-9 infor-comments">
+        <div class="user-comment">
+          <%= User.find(comment.user_id).name %>
+        </div>
+        <div class="infor-blogs">
+          <div class="time-comment">
+            <span class="clock"><i class="fa fa-clock-o"></i></span>
+            <span><%= l comment.created_at, format: :short %></span>
+          </div>
+          <div class="des-blogs des-comment">
+            <%= comment.content %>
+          </div>
+        </div>
+        <div class="reply">
+          <%= link_to "#" do %>
+            <span><i class="fa fa-reply"></i></span>
+            <span>Reply</span>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-1 action-comment">
+        <% if current_user.id == comment.user_id %>
+          <%= link_to "#", 'ng-click' => "editComment()" do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        <% end %>
+        <% if current_user.id == comment.user_id || current_user.id == @blog.user_id %>
+          <%= link_to "#", data: {toggle: "modal", target: "#row_#{comment.id}"}  do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+          <%= render "comments/modal_delete", comment: comment %>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <br>
+  </div>
+<% end %>

@@ -20,7 +20,6 @@
   .infor-profile {
     display: block;
     float: left;
-    // width: 200px;
     .avatar {
       width: 100px;
       height: 100px;
@@ -31,6 +30,12 @@
       -moz-border-radius: 100px;
       -webkit-border-radius: 100px;
       border-radius: 100px;
+
+    }
+    .avatar-comment {
+      width: 60px;
+      height: 60px;
+      padding: 0;
     }
     .user-description {
       font-size: 12px;
@@ -53,11 +58,7 @@
     }
   }
   .infor-blogs {
-    // float: left;
-    // width: 700px;
-    // margin-left: 240px;
     .title-blogs {
-      // text-align: center;
       a {
         font-size: 30px;
         font-weight: 700;
@@ -125,9 +126,11 @@
       color: #666666;
       word-wrap: break-word;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+    .des-comment {
+      margin-bottom: 10px;
     }
     .btn-reading {
       margin-bottom: 80px;
@@ -142,6 +145,9 @@
         font-weight: normal;
         color: white;
       }
+    }
+    .time-comment {
+      font-size: 12px;
     }
   }
 
@@ -187,7 +193,6 @@
       }
     }
   }
-
   .detail-infor {
     ul {
       list-style: none;
@@ -203,6 +208,14 @@
     }
   }
 
+  .user-comment {
+    display: block;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+
   a {
     color: #333333;
     text-decoration: none;
@@ -213,5 +226,37 @@
   .current-url {
     color: #9400D3;
   }
-}
+  .display-line {
+    -webkit-line-clamp: 3;
+  }
 
+  .infor-comments {
+    margin-left: -35px;
+    .reply {
+      font-size: 12px;
+      line-height: 20px;
+      text-decoration: none;
+      a {
+        color: #333333;
+      }
+    }
+  }
+  .comment-start {
+    display: block;
+    position: relative;
+    border-top: 5px solid #333333;
+    margin: 10px 0 30px 0;
+  }
+  .cmt-lb {
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  .btn-post {
+    width: 150px;
+    background-color: #9400D3;
+    color: white;
+  }
+  .action-comment {
+    float: right;
+  }
+}

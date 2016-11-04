@@ -17,6 +17,12 @@ class BlogsController < ApplicationController
     redirect_to :back
   end
 
+  def show
+    @blog = Blog.find params[:id]
+    @blogs = Blog.get_user_blogs(@blog.user_id)
+    @blogs_sort = Blog.get_four_last_blogs @blogs
+    @comments = Comment.where(blog_id: @blog.id)
+  end
 
   private
   def blog_params
