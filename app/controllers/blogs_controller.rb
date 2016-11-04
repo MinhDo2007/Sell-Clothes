@@ -22,6 +22,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.get_user_blogs(@blog.user_id)
     @blogs_sort = Blog.get_four_last_blogs @blogs
     @comments = Comment.where(blog_id: @blog.id)
+    @comments = Blog.find_user_name @comments
   end
 
   private

@@ -1,28 +1,25 @@
 class CommentsController < ApplicationController
+  protect_from_forgery unless: -> { request.format.json? }
   before_action :find_blogs
   before_action :find_comment, only: [:destroy, :edit, :update]
-  before_action :find_comments, only: [:destroy, :create]
+  before_action :find_comments, only: [:destroy, :create, :update]
 
   def new
     @comment = Comment.new
   end
 
   def create
-    @last_comment = @blog.comments.blank? ? "" : @blog.comments.last.id
     @comment = @blog.comments.new comment_params
-    @comment.user_id = current_user.id
     @comment.save
     respond_to do |format|
-      format.html
-      format.js
+      format.json {render json: @comments}
     end
   end
 
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html
-      format.js {flash[:success] = "Delete Comment Successfully"}
+      format.json {render json: @comments}
     end
   end
 
@@ -30,6 +27,10 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @comment.update(content: params[:content])
+    respond_to do |format|
+      format.json {render json: @comments}
+    end
   end
 
   private
@@ -46,6 +47,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit :content
+    params.permit :content, :blog_id, :user_id
   end
 end

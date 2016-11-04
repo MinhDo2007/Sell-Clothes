@@ -26,6 +26,7 @@ gem "gmaps4rails"
 gem "fog"
 gem "geocoder"
 gem "angular-rails-templates"
+gem 'active_model_serializers'
 
 gem "sdoc", "~> 0.4.0", group: :doc
 

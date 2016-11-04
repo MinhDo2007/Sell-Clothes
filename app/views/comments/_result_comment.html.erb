@@ -1,23 +1,24 @@
-<% @comments.each do |comment| %>
-  <div id="row_result_<%= comment.id %>">
+<div ng-init= "init('<%= @comments.to_json %>')">
+  <div ng-repeat="comment in comments track by $index" index="$index">
     <div class="row">
       <div class="col-md-2">
-          <div class="infor-profile">
-            <div class="avatar avatar-comment">
-            </div>
+        <div class="infor-profile">
+          <div class="avatar avatar-comment">
           </div>
+        </div>
       </div>
       <div class="col-md-9 infor-comments">
         <div class="user-comment">
-          <%= User.find(comment.user_id).name %>
+          {{comment.user_name}}
         </div>
         <div class="infor-blogs">
           <div class="time-comment">
             <span class="clock"><i class="fa fa-clock-o"></i></span>
-            <span><%= l comment.created_at, format: :short %></span>
+            <span>{{comment.created_at | date:'medium'}}</span>
           </div>
-          <div class="des-blogs des-comment">
-            <%= comment.content %>
+          <div class="des-blogs des-comment"  ng-model= "desComment">
+            <input ng-keypress="updateComment($event)" type="text" value='{{comment.content}}'
+             ng-class="{'text-input': des{{comment.id}} === 'true'}" class="hidden-input" ng-disabled="disable != {{comment.id}}" id="{{comment.id}}" />
           </div>
         </div>
         <div class="reply">
@@ -28,20 +29,16 @@
         </div>
       </div>
       <div class="col-md-1 action-comment">
-        <% if current_user.id == comment.user_id %>
-          <%= link_to "#", 'ng-click' => "editComment()" do %>
-            <i class="fa fa-pencil"></i>
-          <% end %>
+        <%= link_to "#", 'ng-click' => "editComment(comment.blog_id, comment.id)" do %>
+          <i class="fa fa-pencil"></i>
         <% end %>
-        <% if current_user.id == comment.user_id || current_user.id == @blog.user_id %>
-          <%= link_to "#", data: {toggle: "modal", target: "#row_#{comment.id}"}  do %>
-            <i class="fa fa-times"></i>
-          <% end %>
-          <%= render "comments/modal_delete", comment: comment %>
+        <%= link_to "#", data: {toggle: "modal", target: "#row_{{comment.id}}"} do %>
+          <i class="fa fa-times"></i>
         <% end %>
+        <%= render "comments/modal_delete", comment: '{{comment}}' %>
       </div>
     </div>
     <hr>
     <br>
   </div>
-<% end %>
+</div>

@@ -1,5 +1,4 @@
-<%= form_for([@blog, @blog.comments.build], remote: true) do |f| %>
-  <div class="cmt-lb"><b><%= "Comment" %></b></div>
-  <%= f.text_area :content, rows: 10, class: "text_area_comment" %>
-  <%= f.submit "Post Comment", class: "form-control btn-post" %>
-<% end %>
+<div class="cmt-lb"><b><%= "Comment" %></b></div>
+<textarea ng-model="comment" class="form-control text_area_comment" rows="10"></textarea>
+<button type="button" ng-click="postComment(<%= @blog.id %>, <%= current_user.id %>)"
+ class="form-control btn-post">Submit</button>

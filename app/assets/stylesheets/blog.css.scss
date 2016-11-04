@@ -255,8 +255,18 @@
     width: 150px;
     background-color: #9400D3;
     color: white;
+    display: inline;
   }
   .action-comment {
     float: right;
+  }
+  .des-blogs {
+    .hidden-input {
+      border: 0;
+      background-color: white;
+    }
+    .text-input {
+      border: 1px solid #bbb;
+    }
   }
 }

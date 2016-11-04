@@ -1,5 +1,10 @@
 <div id="blogs" ng-controller="blogsCtr">
-  <div id="flash_success"></div>
+  <div id="flash_success"  ng-show="showMessage === 1">
+    <div class="alert alert-success">
+      <a class="close" data-dismiss="alert" href="#", aria-hiddien="true">&times;</a>
+        {{message}}
+    </div>
+  </div>
   <div class="row">
     <div class="infor-profile col-md-2">
       <%= render "profile_blog" %>

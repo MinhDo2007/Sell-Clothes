@@ -12,5 +12,14 @@ class Blog < ActiveRecord::Base
       blog_arr.map.with_index {|x, i| x if i < 3}
       blog_arr = blog_arr.compact
     end
+
+    def find_user_name comments
+      result = []
+      comments.each do |comment|
+        user_name = User.find(comment.user_id).name
+        result << comment.as_json.merge(:user_name => user_name)
+      end
+      result
+    end
   end
 end
